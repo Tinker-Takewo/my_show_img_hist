@@ -6,7 +6,7 @@ from skimage.io import imread
 
 
 # download the image
-img_url = 'my_show_img_hist/mountain.png'
+img_url = './mountain.png'
 
 im = imread(img_url)
 
