@@ -10,7 +10,7 @@ img_url = 'https://pbs.twimg.com/media/Fmr9BAtagAAZUvN?format=jpg&name=900x900'
 
 im = imread(img_url)
 
-st.image(im, caption='image from wikimedia commons',
+st.image(im, caption='image from Twitter',
          use_column_width=True)
 
 
@@ -49,15 +49,15 @@ for i in range(im.shape[0]):
         im_change[i,j,1]= im_change[i,j,2]
         im_change[i,j,2]= t
 
-st.image(im_change, caption='image from wikimedia commons',
+st.image(im_change, caption='image from Twitter',
          use_column_width=True)
 
 for i in range(im.shape[0]):
     for j in range(im.shape[1]):
         t = im_change[i,j,0]
-        im_change[i,j,0]= im_change[i,j,2]
-        im_change[i,j,2]= im_change[i,j,1]
-        im_change[i,j,1]= t
+        im_change[i,j,0]= im_change[i,j,1]
+        im_change[i,j,1]= im_change[i,j,2]
+        im_change[i,j,2]= t
 
-st.image(im_change, caption='image from wikimedia commons',
+st.image(im_change, caption='image from Twitter',
          use_column_width=True)
