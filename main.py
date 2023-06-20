@@ -6,7 +6,7 @@ from skimage.io import imread
 
 
 # download the image
-img_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Bufo_periglenes1-corrected.jpg/180px-Bufo_periglenes1-corrected.jpg'
+img_url = 'https://pbs.twimg.com/media/Fmr9BAtagAAZUvN?format=jpg&name=900x900'
 
 im = imread(img_url)
 
