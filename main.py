@@ -6,7 +6,7 @@ from skimage.io import imread
 
 
 # download the image
-img_url = './mountain.png'
+img_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Bufo_periglenes1-corrected.jpg/180px-Bufo_periglenes1-corrected.jpg'
 
 im = imread(img_url)
 
