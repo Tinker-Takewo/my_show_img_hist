@@ -37,3 +37,15 @@ if color == 'G':
 if color == 'B':
     df_hist = pd.DataFrame(hist_blue)
     st.bar_chart(df_hist)
+
+# change color
+
+im_change=im
+
+for i in range(im.shape[0]):
+    im_change[i,:,:]= im_change[i,:,:]+10
+    if im_change[i,:,:] > 255:
+        im_change[i,:,:]=255
+
+st.image(im_change, caption='image from wikimedia commons',
+         use_column_width=True)
