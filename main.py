@@ -4,6 +4,8 @@ import pandas as pd
 import streamlit as st
 from skimage.io import imread
 
+# title
+st.title('Show Picture shuffled color')
 
 # download the image
 img_url = 'https://pbs.twimg.com/media/Fmr9BAtagAAZUvN?format=jpg&name=900x900'
@@ -50,7 +52,7 @@ for i in range(im.shape[0]):
         im_change[i,j,2]= t
 
 st.image(im_change, caption='image from Twitter',
-         use_column_width=True)
+        use_column_width=True)
 
 for i in range(im.shape[0]):
     for j in range(im.shape[1]):
@@ -60,4 +62,28 @@ for i in range(im.shape[0]):
         im_change[i,j,2]= t
 
 st.image(im_change, caption='image from Twitter',
-         use_column_width=True)
+        use_column_width=True)
+
+# 単一の色だけ表示
+im_change=im
+
+color = st.radio(
+    "choose R, G, or B",
+    ('R', 'G', 'B'))
+
+c = 0
+
+if color == 'R':
+    c = 0
+if color == 'G':
+    c = 1
+if color == 'B':
+    c = 2
+
+for i in range(im.shape[0]):
+    for j in range(im.shape[1]):
+        im_change[i,j,(c+1)/3]= 0
+        im_change[i,j,(c+2)/3]= 0
+
+st.image(im_change, caption='image from Twitter',
+        use_column_width=True)
