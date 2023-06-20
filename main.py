@@ -82,8 +82,8 @@ if color == 'B':
 
 for i in range(im.shape[0]):
     for j in range(im.shape[1]):
-        im_change[i,j,(c+1)/3]= 0
-        im_change[i,j,(c+2)/3]= 0
+        im_change[i,j,(c+1)%3]= 0
+        im_change[i,j,(c+2)%3]= 0
 
 st.image(im_change, caption='image from Twitter',
         use_column_width=True)
