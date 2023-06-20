@@ -43,9 +43,10 @@ if color == 'B':
 im_change=im
 
 for i in range(im.shape[0]):
-    im_change[i,:,:]= im_change[i,:,:]+10
-    if im_change[i,:,:] > 255:
-        im_change[i,:,:]=255
+    for j in range(im.shape[1]):
+        im_change[i,j,0]= im_change[i,j,0]+10
+        if im_change[i,j,0] > 255:
+            im_change[i,j,0]=255
 
 st.image(im_change, caption='image from wikimedia commons',
          use_column_width=True)
