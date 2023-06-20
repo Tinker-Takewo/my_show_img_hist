@@ -44,9 +44,12 @@ im_change=im
 
 for i in range(im.shape[0]):
     for j in range(im.shape[1]):
-        im_change[i,j,0]= im_change[i,j,0]+10
-        if im_change[i,j,0] > 255:
-            im_change[i,j,0]=255
+        t = im_change[i,j,0]
+        im_change[i,j,0]= im_change[i,j,1]
+        im_change[i,j,1]= im_change[i,j,2]
+        im_change[i,j,2]= t
+        #if im_change[i,j,0] > 255:
+        #    im_change[i,j,0]=255
 
 st.image(im_change, caption='image from wikimedia commons',
          use_column_width=True)
