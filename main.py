@@ -8,7 +8,7 @@ from skimage.io import imread
 st.title('Show Picture shuffled color')
 
 # download the image
-img_url = 'https://pbs.twimg.com/media/Fmr9BAtagAAZUvN?format=jpg&name=900x900'
+img_url = 'https://pbs.twimg.com/media/EiV8b9eUYAALOiF?format=jpg&name=900x900'
 
 im = imread(img_url)
 
